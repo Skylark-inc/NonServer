@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Non Server Editions | Skylark</title>
+
+<link rel="icon" href="web-icon.png" />
+<link rel="apple-touch-icon" href="web-icon.png" />
+
+<style>
+:root{
+  color-scheme: light dark;
+  --bg:#f5f5f7;
+  --card:#ffffffcc;
+  --text:#1c1c1e;
+  --muted:#6e6e73;
+  --border:#d1d1d6;
+  --accent:#007aff;
+  --red:#ff3b30;
+  --disabled:#8e8e93;
+}
+
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#000;
+    --card:#1c1c1ecc;
+    --text:#f5f5f7;
+    --muted:#a1a1a6;
+    --border:#38383a;
+  }
+}
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  min-height:100vh;
+}
+
+main{
+  width:min(900px,100%);
+  margin:0 auto;
+  padding:28px 16px 40px;
+}
+
+.hero{
+  text-align:center;
+  padding:30px 10px 22px;
+}
+
+.hero h1{
+  font-size:34px;
+  margin:0 0 10px;
+  letter-spacing:-0.8px;
+}
+
+.hero p{
+  color:var(--muted);
+  font-size:17px;
+  line-height:1.5;
+  margin:0 auto;
+  max-width:680px;
+}
+
+.notice{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:24px;
+  padding:18px;
+  margin:18px 0;
+  backdrop-filter:blur(18px);
+}
+
+.notice strong{
+  display:block;
+  margin-bottom:6px;
+}
+
+.status{
+  color:var(--muted);
+  font-size:15px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:16px;
+  margin-top:18px;
+}
+
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:28px;
+  padding:22px;
+  backdrop-filter:blur(18px);
+}
+
+.card h2{
+  margin:0 0 8px;
+  font-size:25px;
+}
+
+.card p{
+  color:var(--muted);
+  line-height:1.5;
+  margin:0 0 16px;
+}
+
+.tag{
+  display:inline-block;
+  font-size:13px;
+  padding:6px 10px;
+  border-radius:999px;
+  background:rgba(0,122,255,.12);
+  color:var(--accent);
+  margin-bottom:16px;
+}
+
+.button{
+  display:block;
+  text-align:center;
+  text-decoration:none;
+  padding:14px 16px;
+  border-radius:16px;
+  font-weight:700;
+  background:var(--accent);
+  color:white;
+}
+
+.button.disabled{
+  background:var(--disabled);
+  pointer-events:none;
+  opacity:.55;
+}
+
+.reason{
+  font-size:13px;
+  color:var(--muted);
+  margin-top:10px;
+  text-align:center;
+}
+
+.warning{
+  color:var(--red);
+  font-weight:600;
+}
+
+.footer{
+  text-align:center;
+  margin-top:28px;
+  color:var(--muted);
+  font-size:13px;
+}
+
+.footer a{
+  color:var(--accent);
+  text-decoration:none;
+}
+
+.back{
+  display:inline-block;
+  margin-top:22px;
+  padding:12px 16px;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background:var(--card);
+  color:var(--text);
+  text-decoration:none;
+  font-weight:600;
+}
+
+@media(max-width:700px){
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero h1{
+    font-size:30px;
+  }
+}
+</style>
+</head>
+
+<body>
+<main>
+  <section class="hero">
+    <h1>Non Server Editions</h1>
+    <p>
+      For users who do not want to join Skylark Servers, use Dropbox, or connect to server-based Skylark editions.
+      These editions are separate releases made for offline-style access.
+    </p>
+  </section>
+
+  <section class="notice">
+    <strong>Important</strong>
+    <p class="status" id="deviceStatus">Checking your device...</p>
+  </section>
+
+  <section class="grid">
+    <article class="card">
+      <span class="tag">iOS / iPadOS 18.0 and later</span>
+      <h2>Skylark e</h2>
+      <p>
+        Skylark e is for newer devices running iOS or iPadOS 18.0 and later.
+      </p>
+      <a id="eButton" class="button disabled" href="#">Get Skylark e</a>
+      <div id="eReason" class="reason">Checking support...</div>
+    </article>
+
+    <article class="card">
+      <span class="tag">iOS / iPadOS 15.0 - 17.7.11</span>
+      <h2>Skylark Fe</h2>
+      <p>
+        Skylark Fe is for older supported devices running iOS or iPadOS 15.0 through 17.7.11.
+      </p>
+      <a id="feButton" class="button disabled" href="#">Get Skylark Fe</a>
+      <div id="feReason" class="reason">Checking support...</div>
+    </article>
+  </section>
+
+  <div style="text-align:center;">
+    <a class="back" href="https://skylark-inc.github.io/FindEdition/">Back to Find Edition</a>
+  </div>
+
+  <footer class="footer">
+    <p>
+      <a href="https://x.com/UseSkylark">@UseSkylark</a> ·
+      <a href="https://x.com/Terralinkslabs">@Terralinkslabs</a>
+    </p>
+    <p>©️ Skylark <span id="year"></span></p>
+  </footer>
+</main>
+
+<script>
+const editions = {
+  e: "https://endlesspete.github.io/16e/#",
+  fe: "https://endlesspete.github.io/Fe/#"
+};
+
+function getIOSVersion(){
+  const ua = navigator.userAgent;
+  const isIOS = /iPhone|iPad|iPod/.test(ua);
+  const isModernIPad = navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1;
+
+  if(!isIOS && !isModernIPad) return null;
+
+  const match = ua.match(/OS (\d+)_(\d+)_?(\d+)?/);
+  if(!match) return null;
+
+  return {
+    major: Number(match[1]),
+    minor: Number(match[2] || 0),
+    patch: Number(match[3] || 0)
+  };
+}
+
+function versionNumber(v){
+  return v.major * 10000 + v.minor * 100 + v.patch;
+}
+
+function enable(button, reason, url, text){
+  button.href = url;
+  button.classList.remove("disabled");
+  reason.textContent = text;
+}
+
+function disable(button, reason, text){
+  button.href = "#";
+  button.classList.add("disabled");
+  reason.textContent = text;
+}
+
+const ios = getIOSVersion();
+
+const eButton = document.getElementById("eButton");
+const feButton = document.getElementById("feButton");
+const eReason = document.getElementById("eReason");
+const feReason = document.getElementById("feReason");
+const status = document.getElementById("deviceStatus");
+
+if(!ios){
+  status.innerHTML = '<span class="warning">This page only supports iPhone and iPad devices.</span>';
+  disable(eButton, eReason, "Not supported on this platform.");
+  disable(feButton, feReason, "Not supported on this platform.");
+} else {
+  const current = versionNumber(ios);
+  const feMin = versionNumber({major:15, minor:0, patch:0});
+  const feMax = versionNumber({major:17, minor:7, patch:11});
+  const eMin = versionNumber({major:18, minor:0, patch:0});
+
+  status.textContent = `Detected iOS / iPadOS ${ios.major}.${ios.minor}.${ios.patch}`;
+
+  if(current >= eMin){
+    enable(eButton, eReason, editions.e, "Supported on your device.");
+    disable(feButton, feReason, "Your software is too new for Skylark Fe.");
+  } else if(current >= feMin && current <= feMax){
+    enable(feButton, feReason, editions.fe, "Supported on your device.");
+    disable(eButton, eReason, "Your software is too old for Skylark e.");
+  } else {
+    disable(eButton, eReason, "Requires iOS / iPadOS 18.0 or later.");
+    disable(feButton, feReason, "Requires iOS / iPadOS 15.0 through 17.7.11.");
+    status.innerHTML = '<span class="warning">Your software version is not supported by these editions.</span>';
+  }
+}
+
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
